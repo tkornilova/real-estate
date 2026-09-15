@@ -1,0 +1,130 @@
+.slider {
+  position: relative;
+
+  & .swiper-slide {
+    position: relative;
+
+    border-radius: 16px;
+    overflow: hidden;
+
+    block-size: 290px;
+
+    @media (max-width: 768px) {
+      block-size: 200px;
+    }
+  }
+
+  &__link {
+    display: block;
+
+    cursor: pointer;
+
+    inline-size: 100%;
+    block-size: 100%;
+
+    &:hover .slider__description,
+    &:focus-visible .slider__description {
+      opacity: 1;
+    }
+  }
+
+  &__description {
+    position: absolute;
+    top: 0;
+
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    gap: 7px;
+
+    padding: 20px;
+
+    background: var(--slider-gradient);
+
+    inline-size: 100%;
+    block-size: 100%;
+
+    opacity: 0;
+    transition: opacity var(--transition);
+  }
+
+  &__title {
+    color: var(--white);
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 20px;
+  }
+
+  &__stars {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 5px;
+  }
+
+  &__link img {
+    display: block;
+    object-fit: cover;
+
+    inline-size: 100%;
+    block-size: 100%;
+  }
+
+  &__button {
+    position: absolute;
+    top: calc((100% - 34px - (50px / 2)) / 2);
+    z-index: 2;
+
+    padding: 0;
+
+    border-radius: 50px;
+    box-shadow: var(--card-btn-shadow);
+
+    background-color: var(--white);
+
+    inline-size: 50px;
+    block-size: 50px;
+
+    &::after {
+      content: '';
+
+      position: absolute;
+      inset: 0;
+
+      margin: auto;
+
+      border-right: 2px solid var(--gray);
+      border-bottom: 2px solid var(--gray);
+
+      inline-size: 10px;
+      block-size: 10px;
+    }
+  }
+
+  &__button-prev {
+    left: -25px;
+
+    &::after {
+      transform: rotate(135deg);
+    }
+  }
+
+  &__button-next {
+    right: -25px;
+
+    &::after {
+      transform: rotate(-45deg);
+    }
+  }
+
+  &__pagination {
+    text-align: center;
+  }
+
+  & .swiper-pagination-bullet-active {
+    background-color: var(--red);
+  }
+}

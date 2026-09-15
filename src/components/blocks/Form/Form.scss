@@ -1,0 +1,124 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  padding: 20px;
+
+  &__wrapper {
+    display: flex;
+    gap: 30px;
+
+    margin: 0 0 15px;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
+  }
+
+  &__label {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+
+    color: var(--gray);
+    font-size: 14px;
+    line-height: 25px;
+
+    inline-size: 100%;
+  }
+
+  &__select,
+  &__email {
+    padding: 21px 25px;
+
+    border: 1px solid var(--gray);
+    border-radius: 4px;
+
+    color: var(--white);
+    background-color: transparent;
+
+    transition: border var(--transition);
+
+    inline-size: 100%;
+  }
+
+  &__select {
+    position: relative;
+
+    -webkit-appearance: base-select;
+    -moz-appearance: base-select;
+    appearance: base-select;
+
+    &::picker-icon {
+      display: none;
+    }
+
+    &::after {
+      content: '';
+
+      position: absolute;
+      top: 50%;
+      right: 25px;
+
+      border-right: 1px solid var(--white);
+      border-bottom: 1px solid var(--white);
+
+      transform: translateY(-75%) rotate(45deg);
+      pointer-events: none;
+
+      inline-size: 7px;
+      block-size: 7px;
+    }
+  }
+
+  &__select:hover,
+  &__select:focus-visible,
+  &__email:hover,
+  &__email:focus-visible {
+    border-color: var(--red);
+  }
+
+  &__button {
+    max-inline-size: 220px;
+    min-block-size: 55px;
+  }
+
+  &__agreement {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--gray);
+
+    font-size: 14px;
+    line-height: 18px;
+
+    &:hover .form__checkbox {
+      box-shadow: 0 0 5px 1px var(--red);
+    }
+  }
+
+  &__checkbox {
+    box-shadow: 0 0 0 0 transparent;
+
+    transition: box-shadow var(--transition);
+    accent-color: var(--red);
+
+    inline-size: 15px;
+    block-size: 15px;
+
+    &:focus-visible {
+      box-shadow: 0 0 5px 1px var(--red);
+    }
+  }
+
+  &__agreement-text {
+    cursor: pointer;
+  }
+
+  &__link {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+}

@@ -1,0 +1,46 @@
+.map {
+  inline-size: 100%;
+
+  &__wrapper {
+    inline-size: 100%;
+    block-size: 500px;
+
+    @media (max-width: 1280px) {
+      block-size: 400px;
+    }
+
+    @media (max-width: 768px) {
+      block-size: 250px;
+    }
+  }
+
+  &__pin {
+    position: relative;
+
+    border: 3px solid var(--white);
+    border-radius: 50% 50% 50% 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    background-color: var(--red);
+
+    transform: rotate(-45deg);
+
+    block-size: 32px;
+    inline-size: 32px;
+  }
+
+  &__pin::after {
+    content: '';
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    border-radius: 50%;
+    background-color: var(--white);
+
+    transform: translate(-50%, -50%);
+
+    block-size: 8px;
+    inline-size: 8px;
+  }
+}

@@ -1,0 +1,66 @@
+.header {
+  position: fixed;
+  top: 0;
+  z-index: 10;
+
+  padding: 30px 0;
+
+  color: var(--white);
+  background-color: var(--black-light);
+
+  @media (max-width: 960px) {
+    padding: 20px 0;
+  }
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  &__logo {
+    block-size: 41px;
+    inline-size: 75px;
+
+    @media (max-width: 768px) {
+      block-size: 31px;
+      inline-size: 58px;
+    }
+
+    & svg {
+      block-size: 100%;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px 40px;
+
+    @media (max-width: 1280px) {
+      gap: 20px;
+    }
+
+    @media (max-width: 768px) {
+      gap: 15px;
+    }
+  }
+
+  &__link {
+    color: var(--white);
+    font-size: 18px;
+  }
+
+  &__button {
+    flex-shrink: 0;
+
+    max-inline-size: 145px;
+    inline-size: 100%;
+
+    @media (max-width: 768px) {
+      max-inline-size: 120px;
+    }
+  }
+}
